@@ -20,7 +20,7 @@ n_samples_train = [0, 0, 100000, 0, 0, 0, 0, 0, 0, 0]
 n_samples_test = [0, 0, 10000, 0, 0, 0, 0, 0, 0, 0]
 cnt = 0
 max_overlap_size = 35
-min_overlap_size = 10
+min_overlap_size = 15
 
 
 def remove_zero_padding(arr):
