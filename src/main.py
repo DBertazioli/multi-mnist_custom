@@ -6,18 +6,21 @@ import idx2numpy
 import numpy as np
 from tqdm import tqdm
 
+cherrypicked_seed = 13423
+np.random.seed(cherrypicked_seed)
+random.seed(cherrypicked_seed)
+
 test_path = ['../data/t10k-images-idx3-ubyte', '../data/t10k-labels-idx1-ubyte']
 train_path = ['../data/train-images-idx3-ubyte', '../data/train-labels-idx1-ubyte']
 output_dir = '../output'
 label_file = 'labels.csv'
 
 os.makedirs(output_dir, exist_ok=True)
-n_samples_train = [0, 10000, 10000, 30000, 30000, 100000, 100000, 100000, 100000]
-n_samples_test = [0, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
-
+n_samples_train = [0, 0, 250000, 0, 0, 0, 0, 0, 0, 0]
+n_samples_test = [0, 0, 50000, 0, 0, 0, 0, 0, 0, 0]
 cnt = 0
-number_of_samples_per_class = 10
-overlap_size = 30
+max_overlap_size = 30
+min_overlap_size = 1
 
 
 def remove_zero_padding(arr):
@@ -118,7 +121,7 @@ def merge(list_file, overlap_prob=True):
         ovp = False
 
         if overlap_prob is True:
-            t = random.randint(1, overlap_size)
+            t = random.randint(min_overlap_size, max_overlap_size)
             ins = float(t / 100)
 
         if overlap_prob is True:

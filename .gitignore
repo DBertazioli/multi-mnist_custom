@@ -1,6 +1,8 @@
 # Output
 output/
 
+# data/y_test.npy
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
