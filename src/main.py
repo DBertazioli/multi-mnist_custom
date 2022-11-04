@@ -16,11 +16,11 @@ output_dir = '../output'
 label_file = 'labels.csv'
 
 os.makedirs(output_dir, exist_ok=True)
-n_samples_train = [0, 0, 250000, 0, 0, 0, 0, 0, 0, 0]
-n_samples_test = [0, 0, 50000, 0, 0, 0, 0, 0, 0, 0]
+n_samples_train = [0, 0, 100000, 0, 0, 0, 0, 0, 0, 0]
+n_samples_test = [0, 0, 10000, 0, 0, 0, 0, 0, 0, 0]
 cnt = 0
-max_overlap_size = 30
-min_overlap_size = 1
+max_overlap_size = 35
+min_overlap_size = 10
 
 
 def remove_zero_padding(arr):
